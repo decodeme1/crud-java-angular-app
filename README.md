@@ -14,7 +14,10 @@ espera-se:
 
 -Mas caso precise alterar algumas dessa informações o mesmo pode ser feito no arquivo <br>
 < application.properties > localizado em: < app\app\src\main\resources ><br>
+
+# Observações
 *A job está rodando a cada 1 minuto.
+*A aplicação está rodando na porta 8081
 
 # No mais é isso, qualquer dúvida fale comigo!
 whatsapp: (62) 99530-8186 <br>
