@@ -8,7 +8,7 @@ import java.util.List;
 public interface ProductService {
     List<Product> findAll();
 
-    Product getOne(Long productId);
+    Product getOne(Long id);
 
     List<Product> findByFilter(ProductFilterDTO productFilterDTO);
 

@@ -6,9 +6,11 @@ import com.maximatech.app.repository.ProductRepository;
 import com.maximatech.app.service.ProductService;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
+@Transactional
 public class ProductServiceImpl implements ProductService {
 
     private ProductRepository productRepository;
@@ -23,15 +25,15 @@ public class ProductServiceImpl implements ProductService {
     }
 
     @Override
-    public Product getOne(Long productId) {
-        return this.productRepository.getOne(productId);
+    public Product getOne(Long id) {
+        return this.productRepository.getOne(id);
     }
 
     @Override
     public List<Product> findByFilter(ProductFilterDTO productFilterDTO) {
         return this.productRepository.findByFilter(
                 productFilterDTO.getCode(), productFilterDTO.getDescription(),
-                productFilterDTO.getDepartmentId(), productFilterDTO.isEnabled()
+                productFilterDTO.getDepartmentId()
         );
     }
 

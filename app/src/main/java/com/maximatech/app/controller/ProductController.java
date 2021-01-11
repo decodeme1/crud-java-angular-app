@@ -19,26 +19,31 @@ public class ProductController {
         this.productService = ProductService;
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @GetMapping("find-all")
     List<Product> findAll() {
         return this.productService.findAll();
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("find-by-filter")
     List<Product> findByFilter(@RequestBody ProductFilterDTO productFilterDTO) {
         return this.productService.findByFilter(productFilterDTO);
     }
 
-    @GetMapping("get-one{/productId}")
-    Product getOne(@PathVariable Long productId) {
-        return this.productService.getOne(productId);
+    @CrossOrigin(origins = "http://localhost:4200")
+    @GetMapping("get-one/{id}")
+    Product getOne(@PathVariable Long id) {
+        return this.productService.getOne(id);
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @PostMapping("save")
     Product save(@RequestBody Product product) {
         return this.productService.save(product);
     }
 
+    @CrossOrigin(origins = "http://localhost:4200")
     @DeleteMapping("product/{id}")
     void delete(@PathVariable Long productId) {
         this.productService.delete(productId);
