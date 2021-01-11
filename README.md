@@ -12,7 +12,8 @@ espera-se:
     usuário:postgres
     senha:admin
 
-Mas caso precise alterar algumas dessa informações o mesmo pode ser feito no arquivo < application.properties > localizado em: < app\app\src\main\resources ><br>
+-Mas caso precise alterar algumas dessa informações o mesmo pode ser feito no arquivo <br>
+< application.properties > localizado em: < app\app\src\main\resources ><br>
 *A job está rodando a cada 1 minuto.
 
 # No mais é isso, qualquer dúvida fale comigo!
