@@ -23,6 +23,7 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @EventListener(ContextRefreshedEvent.class)
+    @Scheduled(cron = "0 * * * * *")
     public void synchronizeDepartments() {
         RestTemplate restTemplate = new RestTemplate();
         DepartmentDTO[] tempDepartments = restTemplate.getForObject("https://private-anon-3d4eeadca5-maximatech.apiary-mock.com/fullstack/departamento", DepartmentDTO[].class);
