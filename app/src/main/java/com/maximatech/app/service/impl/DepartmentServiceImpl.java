@@ -4,11 +4,11 @@ import com.maximatech.app.entity.Department;
 import com.maximatech.app.entity.dto.DepartmentDTO;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.context.event.EventListener;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 import com.maximatech.app.repository.DepartmentRepository;
 import com.maximatech.app.service.DepartmentService;
-import org.springframework.scheduling.annotation.Scheduled;
 
 import java.util.ArrayList;
 import java.util.Arrays;

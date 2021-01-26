@@ -12,7 +12,10 @@ import java.util.List;
 @Repository
 public interface ProductRepository extends JpaRepository<Product, Long> {
 
-    @Query(value = " select p from Product p where ( p.description is null or p.description like %:description% ) or ( p.code is null or p.code like %:code% ) or ( p.department.id is null or p.department.id = :department_id) ")
+    @Query(value = " select p from Product p " +
+            "where ( p.description is null or p.description like %:description% )" +
+            " or ( p.code is null or p.code like %:code% ) " +
+            " or ( p.department.id is null or p.department.id = :department_id) ")
     List<Product> findByFilter( @Param("code") String code, @Param("description") String description, @Param("department_id") Long department_id );
 
     @Query(value = "SELECT * FROM PRODUCT WHERE ENABLED = TRUE", nativeQuery = true)
